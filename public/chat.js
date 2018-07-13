@@ -16,8 +16,9 @@ window.onload = function() {
             messages.push(data);
             var html = '';
             for(var i=0; i<messages.length; i++) {
-                html += '<b>' + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
-                html += messages[i].message + '<br />';
+                html += "<div class='messagesContainer'>" + "<b class='authors'>" + (messages[i].username ? messages[i].username : 'Server') + ': </b>';
+                html +=  "<span class='messages'>" + messages[i].message  + "</span>"+ "</div>" + '<br /><br />';
+                
             }
             content.innerHTML = html;
         } else {
@@ -30,7 +31,8 @@ window.onload = function() {
             errorMsg.innerHTML = 'Tell us who you are !' ;
         } else {
             var text = field.value;
-            socket.emit('send', { message: text, username: name.value });
+            var author = name.value;
+            socket.emit('send', { message: text, username: author});
             errorMsg.innerHTML = '' ;
             field.value = "";
         }
