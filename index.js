@@ -2,6 +2,7 @@
 
 var express = require("express");
 var app = express();
+var cool = require('cool-ascii-faces')
 var port = 3700;
 
 app.set('views', __dirname + '/tpl');
@@ -25,3 +26,6 @@ app.get("/", function(req, res){
     res.render("page");
 });
 
+app.get("/cool", function(req, res){
+    res.send(cool());
+});
