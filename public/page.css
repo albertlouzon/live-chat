@@ -3,11 +3,22 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     background: url('/images/liveChatBkgrd.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.title{
+    font-size: 40px;
+    color:green;
+}
+
+.subtitle{
+    font-size: 16px;
+    color: black;
+    font-style: italic;
 }
 
 #content{
