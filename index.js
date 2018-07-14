@@ -13,7 +13,7 @@ var io = require('socket.io').listen(app.listen(port)); //need this for real tim
 console.log("Listening on port " + port);
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('message', { message: 'welcome to the chat' });
+    socket.emit('message', { message: 'Welcome to the SnapCheap !!!' });
     socket.on('send', function (data) {
         io.sockets.emit('message', data);
     });
